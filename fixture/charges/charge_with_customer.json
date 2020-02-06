@@ -1,0 +1,47 @@
+[
+  {
+    "request": {
+      "body": "{\"amount\":748,\"customer\":{\"creation_date\":null,\"email\":\"santi@gmail.com\",\"external_id\":\"mycustom_id_00002\",\"last_name\":\"Contreras\",\"name\":\"Santiago\",\"phone_number\":\"5523231818\",\"requires_account\":false},\"description\":\"An awesome package you bought\",\"due_date\":null,\"method\":\"store\",\"order_id\":null}",
+      "headers": {
+        "Authorization": "Basic c2tfZWNkMmQ2YmNmNGRiNGM3NWE1Zjc2NmQxNWY4Njg5OWI6",
+        "Content-Type": "application/json",
+        "Accept": "application/json; Charset=utf-8"
+      },
+      "method": "post",
+      "options": {
+        "ssl_options": {
+          "versions": [
+            "tlsv1.2"
+          ]
+        },
+        "recv_timeout": 500
+      },
+      "request_body": "",
+      "url": "https://sandbox-api.openpay.mx/v1/mjtkrswiqtxftemz4tgl/charges"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"id\":\"truthabr8i7jzw3xtu3i\",\"authorization\":null,\"operation_type\":\"in\",\"method\":\"store\",\"transaction_type\":\"charge\",\"status\":\"in_progress\",\"conciliated\":false,\"creation_date\":\"2019-07-11T16:46:47-05:00\",\"operation_date\":\"2019-07-11T16:46:47-05:00\",\"description\":\"An awesome package you bought\",\"error_message\":null,\"order_id\":null,\"payment_method\":{\"type\":\"store\",\"reference\":\"1010100764807120\",\"barcode_url\":\"https://sandbox-api.openpay.mx/barcode/1010100764807120?width=1&height=45&text=false\"},\"amount\":748.00,\"customer\":{\"name\":\"Santiago\",\"last_name\":\"Contreras\",\"email\":\"santi@gmail.com\",\"phone_number\":\"5523231818\",\"address\":null,\"creation_date\":\"2019-07-11T16:46:47-05:00\",\"external_id\":\"mycustom_id_00002\",\"clabe\":null},\"currency\":\"MXN\"}",
+      "headers": {
+        "Date": "Thu, 11 Jul 2019 21:46:47 GMT",
+        "Content-Type": "application/json;charset=utf-8",
+        "Content-Length": "746",
+        "Connection": "keep-alive",
+        "Server": "Apache-Coyote/1.1",
+        "OpenPay-Request-ID": "460fe119-590d-4478-a5a2-cdf15ccb9dfe",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "Strict-Transport-Security": "max-age=31536000 ; includeSubDomains",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Frame-Options": "DENY",
+        "X-Content-Type-Options": "nosniff",
+        "Resource-ID": "truthabr8i7jzw3xtu3i",
+        "Location": "https://sandbox-api.openpay.mx/v1/mjtkrswiqtxftemz4tgl/charges/truthabr8i7jzw3xtu3i",
+        "Vary": "Accept-Encoding"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

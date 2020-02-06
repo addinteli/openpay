@@ -1,0 +1,92 @@
+[
+  {
+    "request": {
+      "body": "{\"card_number\":\"4111111111111111\",\"cvv2\":\"110\",\"expiration_month\":\"12\",\"expiration_year\":\"20\",\"holder_name\":\"Juan Perez Ramirez\"}",
+      "headers": {
+        "Authorization": "Basic c2tfZWNkMmQ2YmNmNGRiNGM3NWE1Zjc2NmQxNWY4Njg5OWI6",
+        "Content-Type": "application/json",
+        "Accept": "application/json; Charset=utf-8"
+      },
+      "method": "post",
+      "options": {
+        "ssl_options": {
+          "versions": [
+            "tlsv1.2"
+          ]
+        },
+        "recv_timeout": 10000
+      },
+      "request_body": "",
+      "url": "https://sandbox-api.openpay.mx/v1/mjtkrswiqtxftemz4tgl/tokens"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"id\":\"ktnlozr4s98tbhyqswgm\",\"card\":{\"card_number\":\"411111XXXXXX1111\",\"holder_name\":\"Juan Perez Ramirez\",\"expiration_year\":\"20\",\"expiration_month\":\"12\",\"address\":null,\"creation_date\":null,\"brand\":\"visa\"}}",
+      "headers": {
+        "Date": "Wed, 29 Jan 2020 22:05:12 GMT",
+        "Content-Type": "application/json;charset=utf-8",
+        "Content-Length": "204",
+        "Connection": "keep-alive",
+        "Server": "Apache-Coyote/1.1",
+        "OpenPay-Request-ID": "56b3e642-15ac-41b2-a70f-b03d50056748",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "Strict-Transport-Security": "max-age=31536000 ; includeSubDomains",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Frame-Options": "DENY",
+        "X-Content-Type-Options": "nosniff",
+        "Resource-ID": "ktnlozr4s98tbhyqswgm",
+        "Location": "https://sandbox-api.openpay.mx/v1/mjtkrswiqtxftemz4tgl/tokens/ktnlozr4s98tbhyqswgm",
+        "Vary": "Accept-Encoding"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "{\"amount\":748,\"currency\":\"MXN\",\"customer\":{\"email\":\"juan.vazquez@empresa.com.mx\",\"last_name\":\"Vazquez Juarez\",\"name\":\"Juan\",\"phone_number\":\"4423456723\"},\"customer_id\":null,\"cvv2\":null,\"description\":\"Cargo inicial a mi cuenta\",\"device_session_id\":\"kR1MiQhz2otdIuUlQkbEyitIqVMiI16f\",\"method\":\"card\",\"order_id\":\"000051580335512\",\"source_id\":\"ktnlozr4s98tbhyqswgm\"}",
+      "headers": {
+        "Authorization": "Basic c2tfZWNkMmQ2YmNmNGRiNGM3NWE1Zjc2NmQxNWY4Njg5OWI6",
+        "Content-Type": "application/json",
+        "Accept": "application/json; Charset=utf-8"
+      },
+      "method": "post",
+      "options": {
+        "ssl_options": {
+          "versions": [
+            "tlsv1.2"
+          ]
+        },
+        "recv_timeout": 10000
+      },
+      "request_body": "",
+      "url": "https://sandbox-api.openpay.mx/v1/mjtkrswiqtxftemz4tgl/charges"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"id\":\"trqn6tft7q5dqjokxvkq\",\"authorization\":\"801585\",\"operation_type\":\"in\",\"method\":\"card\",\"transaction_type\":\"charge\",\"card\":{\"type\":\"debit\",\"brand\":\"visa\",\"address\":null,\"card_number\":\"411111XXXXXX1111\",\"holder_name\":\"Juan Perez Ramirez\",\"expiration_year\":\"20\",\"expiration_month\":\"12\",\"allows_charges\":true,\"allows_payouts\":true,\"bank_name\":\"Banamex\",\"bank_code\":\"002\"},\"status\":\"completed\",\"conciliated\":false,\"creation_date\":\"2020-01-29T16:05:14-06:00\",\"operation_date\":\"2020-01-29T16:05:15-06:00\",\"description\":\"Cargo inicial a mi cuenta\",\"error_message\":null,\"order_id\":\"000051580335512\",\"currency\":\"MXN\",\"amount\":748.00,\"customer\":{\"name\":\"Juan\",\"last_name\":\"Vazquez Juarez\",\"email\":\"juan.vazquez@empresa.com.mx\",\"phone_number\":\"4423456723\",\"address\":null,\"creation_date\":\"2020-01-29T16:05:12-06:00\",\"external_id\":null,\"clabe\":null},\"fee\":{\"amount\":24.19,\"tax\":3.8704,\"currency\":\"MXN\"}}",
+      "headers": {
+        "Date": "Wed, 29 Jan 2020 22:05:19 GMT",
+        "Content-Type": "application/json;charset=utf-8",
+        "Content-Length": "894",
+        "Connection": "keep-alive",
+        "Server": "Apache-Coyote/1.1",
+        "OpenPay-Request-ID": "68cb7de6-85a3-43be-a661-45e6590f0c7d",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "Strict-Transport-Security": "max-age=31536000 ; includeSubDomains",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Frame-Options": "DENY",
+        "X-Content-Type-Options": "nosniff",
+        "Resource-ID": "trqn6tft7q5dqjokxvkq",
+        "Location": "https://sandbox-api.openpay.mx/v1/mjtkrswiqtxftemz4tgl/charges/trqn6tft7q5dqjokxvkq",
+        "Vary": "Accept-Encoding"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
