@@ -3,7 +3,7 @@
     "request": {
       "body": "",
       "headers": {
-        "Authorization": "Basic c2tfZWNkMmQ2YmNmNGRiNGM3NWE1Zjc2NmQxNWY4Njg5OWI6",
+        "Authorization": "Basic c2tfZGEwNWRjOTg2MDVkNGUxZDg4MDU4MmI0ZWU2MjFlODQ6",
         "Content-Type": "application/json",
         "Accept": "application/json; Charset=utf-8"
       },
@@ -17,18 +17,18 @@
         "recv_timeout": 10000
       },
       "request_body": "",
-      "url": "https://sandbox-api.openpay.mx/v1/mjtkrswiqtxftemz4tgl/webhooks/wmxyqvqvrfe29jekxgms"
+      "url": "https://sandbox-api.openpay.mx/v1/mjtkrswiqtxftemz4tgl/webhooks/wynd5pcb9edpjb9l1dqp"
     },
     "response": {
       "binary": false,
-      "body": "{\"url\":\"https://paridin.com/\",\"user\":\"webhook-openpay-test\",\"id\":\"wmxyqvqvrfe29jekxgms\",\"force_host_ssl\":false,\"event_types\":[\"charge.refunded\",\"charge.failed\",\"charge.cancelled\",\"charge.created\",\"charge.succeeded\"],\"status\":\"verified\",\"allow_redirects\":false}",
+      "body": "{\"url\":\"https://pgw-op-hook.us.sysb.ai/charge-store\",\"user\":\"FSQ82bKTqCTI4hr6w\",\"id\":\"wynd5pcb9edpjb9l1dqp\",\"force_host_ssl\":false,\"event_types\":[\"charge.created\",\"charge.succeeded\"],\"status\":\"verified\",\"allow_redirects\":false}",
       "headers": {
-        "Date": "Mon, 15 Jul 2019 05:28:42 GMT",
+        "Date": "Tue, 10 Mar 2020 17:10:36 GMT",
         "Content-Type": "application/json;charset=utf-8",
-        "Content-Length": "260",
+        "Content-Length": "227",
         "Connection": "keep-alive",
         "Server": "Apache-Coyote/1.1",
-        "OpenPay-Request-ID": "b5353fb0-0ba8-485c-9b58-9625ca7eaf84",
+        "OpenPay-Request-ID": "5a24369b-dd53-47d0-8694-7b0fde979b02",
         "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
         "Pragma": "no-cache",
         "Expires": "0",

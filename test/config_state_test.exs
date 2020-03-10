@@ -13,7 +13,7 @@ defmodule Openpay.ConfigStateTest do
 
   test "config was successfully loaded" do
     state = %OpenpayConfig{
-      client_secret: "c2tfZWNkMmQ2YmNmNGRiNGM3NWE1Zjc2NmQxNWY4Njg5OWI6",
+      client_secret: "c2tfZGEwNWRjOTg2MDVkNGUxZDg4MDU4MmI0ZWU2MjFlODQ6",
       api_env: :sandbox,
       merchant_id: "mjtkrswiqtxftemz4tgl"
     }

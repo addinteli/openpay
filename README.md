@@ -10,7 +10,7 @@ by adding `openpay` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:openpay, "~> 0.1.0"}
+    {:openpay, "~> 0.2.0"}
   ]
 end
 ```

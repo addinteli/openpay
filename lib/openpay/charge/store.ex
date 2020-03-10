@@ -5,12 +5,11 @@ defmodule Openpay.Charge.Store do
   alias Openpay.ApiClient, as: Client
   alias Openpay.ConfigState
   alias Openpay.Types
-  alias Openpay.Utils.Commons
 
   # add the customer when it will be required
   # deftypestruct Response, ....
 
-  def charge_commerce(%Types.Request.ChargeStore{} = payload) do
+  def charge_commerce(%Types.ChargeStore{} = payload) do
     customer =
       payload
       |> get_customer()
@@ -20,6 +19,7 @@ defmodule Openpay.Charge.Store do
       payload
       |> Map.from_struct()
       |> Map.merge(%{customer: customer})
+      |> Map.delete(:id)
       |> Jason.encode!()
 
     endpoint =
@@ -36,7 +36,9 @@ defmodule Openpay.Charge.Store do
         response.body
 
       {:ok, %{status_code: _} = response} ->
-        Commons.into(Types.Commons.Error, response.body)
+        response.body
+        |> Types.Commons.Error.new_changeset()
+        |> Types.Commons.Error.to_struct()
     end
   end
 
@@ -61,7 +63,7 @@ defmodule Openpay.Charge.Store do
     {microsecond, _} = time.microsecond
     key = "#{time.second}.#{microsecond}"
 
-    %Types.Request.Customer{
+    %Types.Customer{
       external_id: "default-#{key}",
       name: "adm",
       last_name: "platform",

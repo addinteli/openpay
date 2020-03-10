@@ -12,6 +12,7 @@ defmodule Openpay.Charge.CardTest do
     :ok
   end
 
+  @tag :card_token
   test "should create a token" do
     use_cassette "card with token" do
       response = %{
@@ -42,7 +43,7 @@ defmodule Openpay.Charge.CardTest do
     end
   end
 
-  @tag :wip
+  @tag :charge_card
   test "should create a charge to openpay with customer node" do
     use_cassette "charge_with_card" do
       response = %{

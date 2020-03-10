@@ -3,7 +3,7 @@
     "request": {
       "body": "{\"card_number\":\"4111111111111111\",\"cvv2\":\"110\",\"expiration_month\":\"12\",\"expiration_year\":\"20\",\"holder_name\":\"Juan Perez Ramirez\"}",
       "headers": {
-        "Authorization": "Basic c2tfZWNkMmQ2YmNmNGRiNGM3NWE1Zjc2NmQxNWY4Njg5OWI6",
+        "Authorization": "Basic c2tfZGEwNWRjOTg2MDVkNGUxZDg4MDU4MmI0ZWU2MjFlODQ6",
         "Content-Type": "application/json",
         "Accept": "application/json; Charset=utf-8"
       },
@@ -21,14 +21,14 @@
     },
     "response": {
       "binary": false,
-      "body": "{\"id\":\"kcifhjnmyefsssrug4v9\",\"card\":{\"card_number\":\"411111XXXXXX1111\",\"holder_name\":\"Juan Perez Ramirez\",\"expiration_year\":\"20\",\"expiration_month\":\"12\",\"address\":null,\"creation_date\":null,\"brand\":\"visa\"}}",
+      "body": "{\"id\":\"kyhuc91qm91yjwbd1rea\",\"card\":{\"card_number\":\"411111XXXXXX1111\",\"holder_name\":\"Juan Perez Ramirez\",\"expiration_year\":\"20\",\"expiration_month\":\"12\",\"address\":null,\"creation_date\":null,\"brand\":\"visa\"}}",
       "headers": {
-        "Date": "Wed, 29 Jan 2020 22:05:21 GMT",
+        "Date": "Tue, 10 Mar 2020 05:20:41 GMT",
         "Content-Type": "application/json;charset=utf-8",
         "Content-Length": "204",
         "Connection": "keep-alive",
         "Server": "Apache-Coyote/1.1",
-        "OpenPay-Request-ID": "e8250491-d599-4a97-9f57-1e3165356060",
+        "OpenPay-Request-ID": "f43cdc85-991a-41bb-8445-9e7783f16c07",
         "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
         "Pragma": "no-cache",
         "Expires": "0",
@@ -36,8 +36,8 @@
         "X-XSS-Protection": "1; mode=block",
         "X-Frame-Options": "DENY",
         "X-Content-Type-Options": "nosniff",
-        "Resource-ID": "kcifhjnmyefsssrug4v9",
-        "Location": "https://sandbox-api.openpay.mx/v1/mjtkrswiqtxftemz4tgl/tokens/kcifhjnmyefsssrug4v9",
+        "Resource-ID": "kyhuc91qm91yjwbd1rea",
+        "Location": "https://sandbox-api.openpay.mx/v1/mjtkrswiqtxftemz4tgl/tokens/kyhuc91qm91yjwbd1rea",
         "Vary": "Accept-Encoding"
       },
       "status_code": 201,

@@ -7,7 +7,6 @@ defmodule Openpay.Charge.Card do
   alias Openpay.ApiClient, as: Client
   alias Openpay.ConfigState
   alias Openpay.Types
-  alias Openpay.Utils.Commons
 
   # add the customer when it will be required
   # deftypestruct Response, ....
@@ -32,7 +31,9 @@ defmodule Openpay.Charge.Card do
         response.body
 
       {:ok, %{status_code: _} = response} ->
-        Commons.into(Types.Commons.ErrorCard, response.body)
+        response.body
+        |> Types.Commons.Error.new_changeset()
+        |> Types.Commons.Error.to_struct()
     end
   end
 
@@ -62,7 +63,9 @@ defmodule Openpay.Charge.Card do
         response.body
 
       {:ok, %{status_code: _} = response} ->
-        Commons.into(Types.Commons.ErrorCard, response.body)
+        response.body
+        |> Types.Commons.Error.new_changeset()
+        |> Types.Commons.Error.to_struct()
     end
   end
 
