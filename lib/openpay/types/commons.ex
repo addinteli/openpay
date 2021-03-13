@@ -12,6 +12,7 @@ defmodule Openpay.Types.Commons do
     @primary_key false
     embedded_schema do
       field(:client_secret, :string)
+      field(:client_public, :string)
       field(:api_env, :string)
       field(:merchant_id, :string)
     end
@@ -33,7 +34,6 @@ defmodule Openpay.Types.Commons do
       field(:request_id, :string)
       field(:fraud_rules, {:array, :string}, default: [])
     end
-
     def changeset(%__MODULE__{} = error, params) do
       error
       |> cast(params, [
@@ -44,14 +44,12 @@ defmodule Openpay.Types.Commons do
         :request_id,
         :fraud_rules
       ])
-      |> validate_required([:category, :error_code, :description, :http_code, :request_id])
+      |> validate_required([:category, :error_code, :description, :http_code])
     end
-
     def new_changeset(params) do
       %__MODULE__{}
       |> changeset(params)
     end
-
     def to_struct(%Ecto.Changeset{valid?: true} = changeset) do
       apply_changes(changeset)
     end

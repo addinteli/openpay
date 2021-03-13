@@ -66,7 +66,10 @@ defmodule Openpay.Types.Webhook do
   end
 
   def get_changeset(params) do
-    events = Map.get(params, :event_types, [])
+    events =
+      params
+      |> Map.get(:event_types, [])
+      |> Enum.filter(fn e -> e in @allowed_events end)
 
     %__MODULE__{}
     |> cast(params, [:id, :allow_redirects, :force_host_ssl, :status, :url, :user, :event_types])
@@ -88,6 +91,13 @@ defmodule Openpay.Types.Webhook do
 
   def validate_event_types(changeset, _events, false) do
     add_error(changeset, :event_types, "Please check your events almost one of them is invalid.")
+  end
+
+  def list_allowed_events, do: @allowed_events
+
+  def list_categories_with_events do
+    @allowed_events
+    |> Enum.map(fn item -> {string_first(item), item} end)
   end
 
   def list_categories do

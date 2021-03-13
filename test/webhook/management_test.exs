@@ -76,6 +76,26 @@ defmodule Webhook.ManagementTest do
       assert response == Openpay.Webhook.list()
     end
   end
+  
+  @tag :webhook
+  test "retrieve all webhooks with undefined event" do
+    use_cassette "webhooks_list_undefined_event" do
+      response = [
+        %Openpay.Types.Webhook{
+          allow_redirects: false,
+          event_types: ["charge.refunded", "charge.failed", "charge.cancelled", "charge.created", "charge.succeeded"],
+          force_host_ssl: false,
+          id: "wep66wczh79agkqthnaa",
+          password: nil,
+          status: "verified",
+          url: "https://pgw-op-hook.us.sysb.ai/charge-store",
+          user: "webhook_d"
+        }
+      ]
+
+      assert response == Openpay.Webhook.list()
+    end
+  end
 
   @tag :webhook
   test "delete a webhook" do

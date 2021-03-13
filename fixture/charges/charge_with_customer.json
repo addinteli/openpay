@@ -1,7 +1,7 @@
 [
   {
     "request": {
-      "body": "{\"amount\":199.0,\"customer\":{\"creation_date\":null,\"email\":\"santi@gmail.com\",\"external_id\":\"mycustom_id_00004\",\"id\":null,\"last_name\":\"Contreras\",\"name\":\"Santiago\",\"phone_number\":\"5523231818\",\"requires_account\":false},\"description\":\"An awesome package you bought\",\"due_date\":null,\"method\":\"store\",\"order_id\":null}",
+      "body": "{\"amount\":199.0,\"customer\":{\"creation_date\":null,\"email\":\"santi@gmail.com\",\"external_id\":\"mycustom_id_10005\",\"last_name\":\"Contreras\",\"name\":\"Santiago\",\"phone_number\":\"5523231818\",\"requires_account\":false},\"description\":\"An awesome package you bought\",\"due_date\":null,\"method\":\"store\",\"order_id\":null}",
       "headers": {
         "Authorization": "Basic c2tfZGEwNWRjOTg2MDVkNGUxZDg4MDU4MmI0ZWU2MjFlODQ6",
         "Content-Type": "application/json",
@@ -21,14 +21,13 @@
     },
     "response": {
       "binary": false,
-      "body": "{\"id\":\"trmh76idlups530emkax\",\"authorization\":null,\"operation_type\":\"in\",\"transaction_type\":\"charge\",\"status\":\"in_progress\",\"conciliated\":false,\"creation_date\":\"2020-03-09T22:49:42-06:00\",\"operation_date\":\"2020-03-09T22:49:42-06:00\",\"description\":\"An awesome package you bought\",\"error_message\":null,\"order_id\":null,\"currency\":\"MXN\",\"amount\":199.00,\"customer\":{\"name\":\"Santiago\",\"last_name\":\"Contreras\",\"email\":\"santi@gmail.com\",\"phone_number\":\"5523231818\",\"address\":null,\"creation_date\":\"2020-03-09T22:49:41-06:00\",\"external_id\":\"mycustom_id_00004\",\"clabe\":null},\"payment_method\":{\"type\":\"store\",\"reference\":\"1010104084417019\",\"barcode_url\":\"https://sandbox-api.openpay.mx/barcode/1010104084417019?width=1&height=45&text=false\"},\"method\":\"store\"}",
+      "body": "{\"id\":\"trjkktypvxhwcepfcer9\",\"authorization\":null,\"operation_type\":\"in\",\"transaction_type\":\"charge\",\"status\":\"in_progress\",\"conciliated\":false,\"creation_date\":\"2021-02-03T16:19:15-06:00\",\"operation_date\":\"2021-02-03T16:19:15-06:00\",\"description\":\"An awesome package you bought\",\"error_message\":null,\"order_id\":null,\"payment_method\":{\"type\":\"store\",\"reference\":\"1010101574043722\",\"barcode_url\":\"https://sandbox-api.openpay.mx/barcode/1010101574043722?width=1&height=45&text=false\"},\"currency\":\"MXN\",\"amount\":199.00,\"customer\":{\"name\":\"Santiago\",\"last_name\":\"Contreras\",\"email\":\"santi@gmail.com\",\"phone_number\":\"5523231818\",\"address\":null,\"creation_date\":\"2021-02-03T16:19:15-06:00\",\"external_id\":\"mycustom_id_10005\",\"clabe\":null},\"method\":\"store\"}",
       "headers": {
-        "Date": "Tue, 10 Mar 2020 04:49:42 GMT",
+        "Date": "Wed, 03 Feb 2021 22:19:15 GMT",
         "Content-Type": "application/json;charset=utf-8",
         "Content-Length": "746",
         "Connection": "keep-alive",
-        "Server": "Apache-Coyote/1.1",
-        "OpenPay-Request-ID": "81486e62-3562-45c3-b19e-353930ba4d44",
+        "OpenPay-Request-ID": "1ca05d33-f39e-4cc3-a2c5-99e636d18dab",
         "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
         "Pragma": "no-cache",
         "Expires": "0",
@@ -36,9 +35,8 @@
         "X-XSS-Protection": "1; mode=block",
         "X-Frame-Options": "DENY",
         "X-Content-Type-Options": "nosniff",
-        "Resource-ID": "trmh76idlups530emkax",
-        "Location": "https://sandbox-api.openpay.mx/v1/mjtkrswiqtxftemz4tgl/charges/trmh76idlups530emkax",
-        "Vary": "Accept-Encoding"
+        "Resource-ID": "trjkktypvxhwcepfcer9",
+        "Location": "https://sandbox-api.openpay.mx/v1/mjtkrswiqtxftemz4tgl/charges/trjkktypvxhwcepfcer9"
       },
       "status_code": 200,
       "type": "ok"

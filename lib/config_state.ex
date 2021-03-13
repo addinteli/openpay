@@ -21,6 +21,7 @@ defmodule Openpay.ConfigState do
   defp init_state do
     %OpenpayConfig{
       client_secret: encode64(Application.get_env(:openpay, :client_secret) <> ":"),
+      client_public: encode64(Application.get_env(:openpay, :client_public) <> ":"),
       api_env: Application.get_env(:openpay, :api_env),
       merchant_id: Application.get_env(:openpay, :merchant_id)
     }

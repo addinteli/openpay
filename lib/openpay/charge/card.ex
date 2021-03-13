@@ -11,7 +11,7 @@ defmodule Openpay.Charge.Card do
   # add the customer when it will be required
   # deftypestruct Response, ....
 
-  def create_token(%Types.RequestCard.CreateToken{} = payload) do
+  def create_token(%Types.Token{} = payload) do
     body =
       payload
       |> Map.from_struct()
@@ -37,16 +37,20 @@ defmodule Openpay.Charge.Card do
     end
   end
 
-  def charge(%Types.RequestCard.ChargeIdCardToken{} = payload) do
+  def charge(%Types.ChargeCard{} = payload) do
     customer =
       payload
       |> get_customer()
-      |> Map.from_struct()
+
+    payment_plan =
+      payload
+      |> get_payment_plan
 
     body =
       payload
       |> Map.from_struct()
-      |> Map.merge(%{customer: customer})
+      |> Map.merge(customer)
+      |> Map.merge(payment_plan)
       |> Jason.encode!()
 
     endpoint =
@@ -69,12 +73,6 @@ defmodule Openpay.Charge.Card do
     end
   end
 
-  def get_receipt(reference) do
-    :api_env
-    |> ConfigState.get_config()
-    |> Client.get_endpoint_receipt()
-    |> (&"#{&1}/#{ConfigState.get_config(:merchant_id)}/#{reference}").()
-  end
 
   defp get_headers do
     Client.get_headers("Basic #{ConfigState.get_config(:client_secret)}")
@@ -82,15 +80,18 @@ defmodule Openpay.Charge.Card do
 
   defp get_options, do: Client.get_options()
 
-  defp get_customer(%{customer: nil}), do: default_customer()
-  defp get_customer(%{customer: customer}), do: customer
+  defp get_customer(%{customer: nil}), do: %{customer: Map.from_struct(default_customer())}
+  defp get_customer(%{customer: customer}), do: %{customer: Map.from_struct(customer)}
+
+  defp get_payment_plan(%{payment_plan: nil}), do: %{}
+  defp get_payment_plan(%{payment_plan: payment_plan}), do: %{customer: Map.from_struct(payment_plan)}
 
   defp default_customer do
-    %Types.RequestCard.Customer{
-      name: "Luis",
-      last_name: "Santiago",
-      email: "luis@santiago.com",
-      phone_number: "97111451178"
+    %Types.Customer{
+      name: "Joe",
+      last_name: "Doe",
+      email: "joe@doe.com",
+      phone_number: "1000201035"
     }
   end
 end

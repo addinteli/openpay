@@ -7,6 +7,7 @@ defmodule Openpay.Types.Customer do
 
   @email_validation ~r/^[A-Za-z0-9._%+-+']+@[A-Za-z0-9.-]+\.[A-Za-z]+$/
 
+  @primary_key false
   embedded_schema do
     field(:external_id, :string)
     field(:creation_date, :string)

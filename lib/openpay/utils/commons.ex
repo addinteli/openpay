@@ -19,19 +19,6 @@ defmodule Openpay.Utils.Commons do
     |> Enum.map(fn {key, value} -> {to_camel(key), value} end)
   end
 
-  defp camelize([], :upper), do: []
-
-  defp camelize([h | tail], :lower) do
-    [to_lower(h)] ++ camelize(tail, :upper)
-  end
-
-  defp camelize([h | tail], :upper) do
-    [capitalize(h)] ++ camelize(tail, :upper)
-  end
-
-  defp capitalize(word), do: String.capitalize(word)
-  defp to_lower(word), do: String.downcase(word)
-
   def is_empty(str) when is_bitstring(str) do
     total = str |> String.trim() |> String.length()
 
@@ -58,18 +45,29 @@ defmodule Openpay.Utils.Commons do
   def into(schema_type, map), do: struct(schema_type, map)
 
   # Privates
+  defp camelize([], :upper), do: []
+
+  defp camelize([h | tail], :lower) do
+    [to_lower(h)] ++ camelize(tail, :upper)
+  end
+
+  defp camelize([h | tail], :upper) do
+    [capitalize(h)] ++ camelize(tail, :upper)
+  end
+
+  defp capitalize(word), do: String.capitalize(word)
+
+  defp to_lower(word), do: String.downcase(word)
+
   defp when_is_key(data) when is_map(data) do
     map_to_atom(data)
   end
 
   defp when_is_key(data) when is_list(data) do
-    data
-    |> Enum.map(fn key -> when_is_key(key) end)
+    Enum.map(data, fn key -> when_is_key(key) end)
   end
 
-  defp when_is_key(data) do
-    data
-  end
+  defp when_is_key(data), do: data
 
   defp key_to_atom(str) do
     str |> Macro.underscore() |> String.to_atom()

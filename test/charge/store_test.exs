@@ -18,29 +18,29 @@ defmodule Openpay.Charge.StoreTest do
       expected = %{
         amount: 199.0,
         authorization: nil,
-        creation_date: "2020-03-09T22:49:42-06:00",
+        creation_date: "2021-02-03T16:19:15-06:00",
         currency: "MXN",
         description: "An awesome package you bought",
         error_message: nil,
-        id: "trmh76idlups530emkax",
+        id: "trjkktypvxhwcepfcer9",
         method: "store",
         operation_type: "in",
         status: "in_progress",
         transaction_type: "charge",
         conciliated: false,
-        operation_date: "2020-03-09T22:49:42-06:00",
+        operation_date: "2021-02-03T16:19:15-06:00",
         payment_method: %{
           barcode_url:
-            "https://sandbox-api.openpay.mx/barcode/1010104084417019?width=1&height=45&text=false",
-          reference: "1010104084417019",
+            "https://sandbox-api.openpay.mx/barcode/1010101574043722?width=1&height=45&text=false",
+          reference: "1010101574043722",
           type: "store"
         },
         customer: %{
           address: nil,
           clabe: nil,
-          creation_date: "2020-03-09T22:49:41-06:00",
+          creation_date: "2021-02-03T16:19:15-06:00",
           email: "santi@gmail.com",
-          external_id: "mycustom_id_00004",
+          external_id: "mycustom_id_10005",
           last_name: "Contreras",
           name: "Santiago",
           phone_number: "5523231818"
@@ -52,8 +52,8 @@ defmodule Openpay.Charge.StoreTest do
         %{
           amount: 199,
           description: "An awesome package you bought",
-          customer: %Types.Customer{
-            external_id: "mycustom_id_00004",
+          customer: %{
+            external_id: "mycustom_id_10005",
             name: "Santiago",
             last_name: "Contreras",
             email: "santi@gmail.com",
@@ -137,8 +137,6 @@ defmodule Openpay.Charge.StoreTest do
               email: "santi@gmail.com",
               phone_number: "5523231818"
             }
-            |> Types.Customer.new_changeset()
-            |> Types.Customer.to_struct()
         }
         |> Types.ChargeStore.new_changeset()
         |> Types.ChargeStore.to_struct()
