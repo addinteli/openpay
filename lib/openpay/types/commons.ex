@@ -3,6 +3,31 @@ defmodule Openpay.Types.Commons do
   This module defines the common types from the api.
   """
 
+  defmodule AuthzConfig do
+    @moduledoc """
+    Auth config
+    """
+    use Ecto.Schema
+    import Ecto.Changeset
+
+    @primary_key false
+    embedded_schema do
+      field(:username, :string)
+      field(:password, :string)
+      field(:issuers, {:array, :string})
+    end
+    def changeset(authz, params) do
+      authz
+      |> cast(params, [:username, :password, :issuers])
+    end
+
+    def apply_config(%Ecto.Changeset{valid?: true} = changeset) do
+      {:ok, apply_changes(changeset)}
+    end
+
+    def apply_config(changeset), do: {:error, changeset}
+  end
+
   defmodule OpenpayConfig do
     @moduledoc """
     Openpay Config type
@@ -15,6 +40,7 @@ defmodule Openpay.Types.Commons do
       field(:client_public, :string)
       field(:api_env, :string)
       field(:merchant_id, :string)
+      embeds_one(:authz, AuthzConfig)
     end
   end
 
