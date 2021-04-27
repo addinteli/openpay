@@ -16,8 +16,8 @@ defmodule Openpay.MixProject do
       package: package(),
       # exdocs
       name: "ADM Base",
-      source_url: "https://github.com/paridin/openpay",
-      homepage_url: "https://paridin.com",
+      source_url: "https://github.com/addinteli/openpay",
+      homepage_url: "https://www.addinteli.com.mx",
       docs: [
         # The main page in the docs
         main: "Openpay",
