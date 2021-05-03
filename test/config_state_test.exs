@@ -13,6 +13,7 @@ defmodule Openpay.ConfigStateTest do
 
   test "config was successfully loaded" do
     state = %OpenpayConfig{
+      authz: %Openpay.Types.Commons.AuthzConfig{issuers: ["153600"], password: "4wP4Z9NAKKba4S1Wirhi5ccbbkDZGQoU", username: "openpay-auth"},
       client_secret: "c2tfZGEwNWRjOTg2MDVkNGUxZDg4MDU4MmI0ZWU2MjFlODQ6",
       client_public: "cGtfOGZmZWM5M2E2OTcyNDhlODgxY2Q0ZjY3ZDAyN2Y4MWE6",
       api_env: :sandbox,
